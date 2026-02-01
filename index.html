@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Justin Venon | Dev & Cyber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #dfecff;
+    color: #1f2937;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0f172a;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #2563eb;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.50);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: #2563eb;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #2563eb;
+}
+
+.timeline-item {
+    width: 45%;
+    padding: 1rem;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 55%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    width: 20px;
+    height: 20px;
+    background: #2563eb;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px #f5f7fa;
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+/* Style modernisé pour le lien */
+.contact a {
+    display: inline-block;
+    position: relative;
+    margin-top: 1rem;
+    color: #2563eb; /* couleur du texte */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 3px; /* espace pour le trait */
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.contact a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px; /* épaisseur du trait */
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.contact a:hover {
+    color: #1e40af; /* texte plus foncé au survol */
+}
+
+.contact a:hover::after {
+    width: 100%; /* barre qui s'étend */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0f172a;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav a {
+        margin-left: 1rem;
+    }
+    .timeline-item,
+    .timeline-item.right,
+    .timeline-item.left {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 0;
+    }
+    .timeline::before {
+        left: 8px;
+    }
+    .timeline-item::before {
+        left: -8px !important;
+    }
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0f172a;
+    letter-spacing: 1px;
+    position: relative; /* Nécessaire pour le ::after */
+    cursor: pointer;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* ajuster selon l'espacement souhaité */
+    width: 0%;
+    height: 3px; /* même épaisseur que tes titres de section */
+    background: #2563eb; /* même couleur que tes titres */
+    transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative; /* nécessaire pour le ::after */
+    display: inline-block; /* pour que la ligne colle au texte */
+    cursor: pointer; /* optionnel, pour indiquer l'interaction */
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* distance sous le texte */
+    width: 0%;
+    height: 3px; /* même épaisseur que tes titres de section */
+    background: #dfecff; /* couleur du trait */
+    transition: width 0.3s ease;
+}
+
+.hero h1:hover::after {
+    width: 100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">JUSTIN VENON</div>
+        <nav>
+            <a href="#profil">Profil</a>
+            <a href="#skills">Compétences</a>
+            <a href="#langues">langues</a>
+            <a href="#experience">Expérience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div>
+        <h1>Développeur & Cybersécurité</h1>
+        <p>Étudiant en Bac Pro CIEL — passionné par le développement, les systèmes et la sécurité offensive.</p>
+        <span>DEV · SYSTEM · CYBER</span>
+    </div>
+</div>
+
+<section id="profil">
+    <br>
+    <br>
+    <br>
+    <h2>Profil</h2>
+    <div class="grid">
+        <div class="card">
+            <p>
+                Étudiant en informatique orienté développement logiciel, systèmes
+                et cybersécurité. Intérêt particulier pour le bas niveau,
+                l’automatisation et les environnements techniques complexes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <br>
+    <br>
+    <br>
+    <h2>Compétences</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Programmation</h3>
+            <p>HTML, CSS, JavaScript, Python, Java, Node.js, Express, Rust, notions de C</p>
+        </div>
+
+        <div class="card">
+            <h3>Développement</h3>
+            <p>Applications desktop (PyQt / WebEngine), scripts et applications, serveurs web</p>
+        </div>
+
+        <div class="card">
+            <h3>Systèmes & Réseau</h3>
+            <p>Linux, Windows, configuration serveur, HTTP/S, SSH, sqlite3, flask, Wireshark</p>
+        </div>
+
+        <div class="card">
+            <h3>Cybersécurité</h3>
+            <p>Root-Me, TryHackMe, Hack The Box, cattheflag, cyberini, creed-ctf</p>
+        </div>
+    </div>
+</section>
+
+<section id="langues">
+    <br><br><br>
+    <h2>Langues</h2>
+    <div class="grid">
+        <div class="card">
+            <h3 class="langue">Français</h3>
+            <p class="niveau">Langue maternelle</p>
+        </div>
+        <div class="card">
+            <h3 class="langue">Anglais</h3>
+            <p class="niveau">Niveau intermédiaire</p>
+        </div>
+        <div class="card">
+            <h3 class="langue">Espagnol</h3>
+            <p class="niveau">Niveau intermédiaire</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <br>
+    <br>
+    <br>
+    <h2>Expérience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Parcours CIEL</h3>
+                <span>2024 - 2026</span>
+                <p>
+                    Formation orientée informatique, réseaux, systèmes et cybersécurité,
+                    avec développement logiciel et bases du bas niveau.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Stage SI - MARS petcare FRANCE</h3>
+                <span>24 nomvembre - 19 decembre 2025</span>
+                <p>
+                    stage dans le service informatique de l'usine de MARS petcare FRANCE située a Saint-Denis-de-l'Hôtel.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Stage SI — Polytech Orléans</h3>
+                <span>3 semaines</span>
+                <p>
+                    Stage en systèmes informatiques : découverte de l’infrastructure,
+                    participation aux missions techniques et approche du SI en milieu universitaire.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Stage TAV — Technique à Vue</h3>
+                <span>3 semaines</span>
+                <p>
+                    Stage dans un environnement technique avec intervention
+                    sur des systèmes et équipements professionnels.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="projets">
+    <br><br><br>
+    <h2>Projets</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>BlueLock – Coffre USB chiffré (Python)</h3>
+            <p>
+                Conception et développement d’un coffre de fichiers sécurisé avec chiffrement AES‑256‑GCM.
+                Gestion sécurisée de la clé maître via Argon2id / Scrypt, fragmentation des fichiers,
+                index chiffré et interface Tkinter multi-plateforme.
+            </p>
+            <p><strong>Fonctionnalités :</strong> création, ouverture, export, suppression de fichiers et rotation de mot de passe.</p>
+        </div>
+        <!-- Tu peux ajouter d'autres projets ici si besoin -->
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <br><br>
+    <h2>Contact</h2>
+    <p>
+        venon.justin@gmail.com<br>
+        +33 06 79 92 95 69<br>
+        vienne-en-val (45510)
+    </p>
+    <a href="mailto:venon.justin@gmail.com">Me contacter</a>
+</section>
+
+<footer>
+    Justin Venon | Dev & Cyber
+</footer>
+
+</body>
+</html>
