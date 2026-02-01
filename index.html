@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    /* Reset basique */
+    
 * {
     margin: 0;
     padding: 0;
@@ -78,7 +78,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Hero Section */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -112,7 +112,7 @@ nav a:hover::after {
     letter-spacing: 1px;
 }
 
-/* Sections */
+
 section {
     max-width: 1200px;
     margin: 6rem auto;
@@ -128,7 +128,7 @@ section h2 {
     padding-bottom: 0.5rem;
 }
 
-/* Grid layout */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -153,7 +153,7 @@ section h2 {
     color: #2563eb;
 }
 
-/* Timeline */
+
 .timeline {
     position: relative;
     margin: 2rem 0;
@@ -211,21 +211,21 @@ section h2 {
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Contact Section */
+
 .contact {
     text-align: center;
 }
 
-/* Style modernisé pour le lien */
+
 .contact a {
     display: inline-block;
     position: relative;
     margin-top: 1rem;
-    color: #2563eb; /* couleur du texte */
+    color: #2563eb; 
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    padding-bottom: 3px; /* espace pour le trait */
+    padding-bottom: 3px; 
     transition: color 0.3s ease;
     cursor: pointer;
 }
@@ -236,17 +236,17 @@ section h2 {
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 2px; /* épaisseur du trait */
+    height: 2px; 
     background: #2563eb;
     transition: width 0.3s ease;
 }
 
 .contact a:hover {
-    color: #1e40af; /* texte plus foncé au survol */
+    color: #1e40af; 
 }
 
 .contact a:hover::after {
-    width: 100%; /* barre qui s'étend */
+    width: 100%; 
 }
 
 /* Footer */
@@ -257,7 +257,7 @@ footer {
     color: #fff;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     nav a {
         margin-left: 1rem;
@@ -282,7 +282,7 @@ footer {
     font-size: 1.5rem;
     color: #0f172a;
     letter-spacing: 1px;
-    position: relative; /* Nécessaire pour le ::after */
+    position: relative; 
     cursor: pointer;
 }
 
@@ -290,10 +290,10 @@ footer {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -4px; /* ajuster selon l'espacement souhaité */
+    bottom: -4px; 
     width: 0%;
-    height: 3px; /* même épaisseur que tes titres de section */
-    background: #2563eb; /* même couleur que tes titres */
+    height: 3px; 
+    background: #2563eb; 
     transition: width 0.3s ease;
 }
 
@@ -304,19 +304,19 @@ footer {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    position: relative; /* nécessaire pour le ::after */
-    display: inline-block; /* pour que la ligne colle au texte */
-    cursor: pointer; /* optionnel, pour indiquer l'interaction */
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer; 
 }
 
 .hero h1::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -6px; /* distance sous le texte */
+    bottom: -6px; 
     width: 0%;
-    height: 3px; /* même épaisseur que tes titres de section */
-    background: #dfecff; /* couleur du trait */
+    height: 3px; 
+    background: #dfecff; 
     transition: width 0.3s ease;
 }
 
@@ -501,3 +501,4 @@ footer {
 
 </body>
 </html>
+
