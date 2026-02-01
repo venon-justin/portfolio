@@ -12,6 +12,7 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -24,7 +25,7 @@ header {
 
 .header-content {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -35,23 +36,7 @@ header {
     font-weight: 700;
     font-size: 1.5rem;
     color: #0f172a;
-    position: relative;
-    cursor: pointer;
-}
-
-.logo::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 3px;
-    background: #2563eb;
-    transition: width 0.3s;
-}
-
-.logo:hover::after {
-    width: 100%;
+    letter-spacing: 1px;
 }
 
 nav a {
@@ -60,53 +45,63 @@ nav a {
     color: #0f172a;
     font-weight: 500;
     position: relative;
+    transition: color 0.3s;
 }
 
 nav a::after {
     content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
+    display: block;
     width: 0%;
     height: 2px;
     background: #2563eb;
     transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+nav a:hover {
+    color: #2563eb;
 }
 
 nav a:hover::after {
     width: 100%;
 }
 
+
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-    color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .hero h1 {
     font-size: 3rem;
-    position: relative;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero span {
     display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-.hero h1::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: #dfecff;
-    transition: width 0.3s;
-}
-
-.hero h1:hover::after {
-    width: 100%;
-}
 
 section {
     max-width: 1200px;
@@ -116,10 +111,13 @@ section {
 
 section h2 {
     font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 2rem;
     border-bottom: 3px solid #2563eb;
     display: inline-block;
-    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
 }
+
 
 .grid {
     display: grid;
@@ -128,25 +126,34 @@ section h2 {
 }
 
 .card {
-    background: white;
+    background: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.50);
 }
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: #2563eb;
+}
+
 
 .timeline {
     position: relative;
+    margin: 2rem 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     left: 50%;
+    transform: translateX(-50%);
     width: 4px;
     height: 100%;
     background: #2563eb;
@@ -154,6 +161,8 @@ section h2 {
 
 .timeline-item {
     width: 45%;
+    padding: 1rem;
+    position: relative;
     margin: 2rem 0;
 }
 
@@ -165,35 +174,142 @@ section h2 {
     left: 55%;
 }
 
-.timeline-content {
-    background: white;
-    padding: 1rem;
-    border-radius: 12px;
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    width: 20px;
+    height: 20px;
+    background: #2563eb;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px #f5f7fa;
 }
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
 
 .contact {
     text-align: center;
 }
 
+
 .contact a {
-    color: #2563eb;
-    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    margin-top: 1rem;
+    color: #2563eb; 
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 3px; 
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
+.contact a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px; 
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.contact a:hover {
+    color: #1e40af; 
+}
+
+.contact a:hover::after {
+    width: 100%; 
+}
+
+/* Footer */
 footer {
-    background: #0f172a;
-    color: white;
     text-align: center;
     padding: 2rem;
+    background: #0f172a;
+    color: #fff;
 }
 
+
 @media (max-width: 768px) {
-    .timeline-item {
+    nav a {
+        margin-left: 1rem;
+    }
+    .timeline-item,
+    .timeline-item.right,
+    .timeline-item.left {
         width: 100%;
         left: 0 !important;
+        margin-left: 0;
     }
     .timeline::before {
         left: 8px;
     }
+    .timeline-item::before {
+        left: -8px !important;
+    }
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0f172a;
+    letter-spacing: 1px;
+    position: relative; 
+    cursor: pointer;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px; 
+    width: 0%;
+    height: 3px; 
+    background: #2563eb; 
+    transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer; 
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    width: 0%;
+    height: 3px; 
+    background: #dfecff; 
+    transition: width 0.3s ease;
+}
+
+.hero h1:hover::after {
+    width: 100%;
 }
