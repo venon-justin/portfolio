@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Justin Venon | Dev & Cyber</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Justin Venon | Dev & Cyber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -15,7 +15,7 @@
         <nav>
             <a href="#profil">Profil</a>
             <a href="#skills">Compétences</a>
-            <a href="#langues">Langues</a>
+            <a href="#langues">langues</a>
             <a href="#experience">Expérience</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -31,6 +31,9 @@
 </div>
 
 <section id="profil">
+    <br>
+    <br>
+    <br>
     <h2>Profil</h2>
     <div class="grid">
         <div class="card">
@@ -44,6 +47,9 @@
 </section>
 
 <section id="skills">
+    <br>
+    <br>
+    <br>
     <h2>Compétences</h2>
     <div class="grid">
         <div class="card">
@@ -63,30 +69,34 @@
 
         <div class="card">
             <h3>Cybersécurité</h3>
-            <p>Root-Me, TryHackMe, Hack The Box, Capture The Flag</p>
+            <p>Root-Me, TryHackMe, Hack The Box, cattheflag, cyberini, creed-ctf</p>
         </div>
     </div>
 </section>
 
 <section id="langues">
+    <br><br><br>
     <h2>Langues</h2>
     <div class="grid">
         <div class="card">
-            <h3>Français</h3>
-            <p>Langue maternelle</p>
+            <h3 class="langue">Français</h3>
+            <p class="niveau">Langue maternelle</p>
         </div>
         <div class="card">
-            <h3>Anglais</h3>
-            <p>Niveau intermédiaire</p>
+            <h3 class="langue">Anglais</h3>
+            <p class="niveau">Niveau intermédiaire</p>
         </div>
         <div class="card">
-            <h3>Espagnol</h3>
-            <p>Niveau intermédiaire</p>
+            <h3 class="langue">Espagnol</h3>
+            <p class="niveau">Niveau intermédiaire</p>
         </div>
     </div>
 </section>
 
 <section id="experience">
+    <br>
+    <br>
+    <br>
     <h2>Expérience</h2>
 
     <div class="timeline">
@@ -96,17 +106,40 @@
                 <h3>Parcours CIEL</h3>
                 <span>2024 - 2026</span>
                 <p>
-                    Formation orientée informatique, réseaux, systèmes et cybersécurité.
+                    Formation orientée informatique, réseaux, systèmes et cybersécurité,
+                    avec développement logiciel et bases du bas niveau.
                 </p>
             </div>
         </div>
 
         <div class="timeline-item right">
             <div class="timeline-content">
-                <h3>Stage SI - MARS Petcare France</h3>
-                <span>Novembre - Décembre 2025</span>
+                <h3>Stage SI - MARS petcare FRANCE</h3>
+                <span>24 nomvembre - 19 decembre 2025</span>
                 <p>
-                    Stage au service informatique de l’usine de Saint-Denis-de-l’Hôtel.
+                    stage dans le service informatique de l'usine de MARS petcare FRANCE située a Saint-Denis-de-l'Hôtel.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Stage SI — Polytech Orléans</h3>
+                <span>3 semaines</span>
+                <p>
+                    Stage en systèmes informatiques : découverte de l’infrastructure,
+                    participation aux missions techniques et approche du SI en milieu universitaire.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Stage TAV — Technique à Vue</h3>
+                <span>3 semaines</span>
+                <p>
+                    Stage dans un environnement technique avec intervention
+                    sur des systèmes et équipements professionnels.
                 </p>
             </div>
         </div>
@@ -114,12 +147,30 @@
     </div>
 </section>
 
+<section id="projets">
+    <br><br><br>
+    <h2>Projets</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>BlueLock – Coffre USB chiffré (Python)</h3>
+            <p>
+                Conception et développement d’un coffre de fichiers sécurisé avec chiffrement AES‑256‑GCM.
+                Gestion sécurisée de la clé maître via Argon2id / Scrypt, fragmentation des fichiers,
+                index chiffré et interface Tkinter multi-plateforme.
+            </p>
+            <p><strong>Fonctionnalités :</strong> création, ouverture, export, suppression de fichiers et rotation de mot de passe.</p>
+        </div>
+        <!-- Tu peux ajouter d'autres projets ici si besoin -->
+    </div>
+</section>
+
 <section id="contact" class="contact">
+    <br><br>
     <h2>Contact</h2>
     <p>
         venon.justin@gmail.com<br>
         +33 06 79 92 95 69<br>
-        Vienne-en-Val (45510)
+        vienne-en-val (45510)
     </p>
     <a href="mailto:venon.justin@gmail.com">Me contacter</a>
 </section>
